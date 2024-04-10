@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+
+context:
+  name: rattler-build-conda-compat
+  version: "0.0.1"
+
+package:
+  name: ${{ name | lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/nichmor/rattler-build-conda-compat/releases/download/v{{ version }}/rattler-build-conda-compat-{{ version }}.tar.gz
+  sha256: a172a25c73936f23448d3d9a29bfbd578ac4e676962a78e546da8be86e14745d
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - python -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - setuptools >=45
+  run:
+    - python >=3.8
+    - rattler-build
+    - conda-build
+    - pytest
+
+tests:
+  - python:
+      imports:
+        - rattler_build_conda_compat.loader
+        - rattler_build_conda_compat.render
+
+
+about:
+  homepage: https://github.com/nichmor/rattler-build-conda-compat
+  summary: rattler-build module which offer compatibility with conda-smithy
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+
+extra:
+  recipe-maintainers:
+    - nichmor
+    - '0xbe7a'
+
+
