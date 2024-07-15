@@ -1,5 +1,5 @@
 {% set name = "rattler-build-conda-compat" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.6" %}
 
 package:
   name: {{ name|lower }}
