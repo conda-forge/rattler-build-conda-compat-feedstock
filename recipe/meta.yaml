@@ -23,7 +23,7 @@ requirements:
     - python >=3.10
     - rattler-build
     - conda-build
-    - typing-extensions>=4.12.2,<5
+    - typing-extensions >=4.12.2,<5
     - tomli
     - ruamel.yaml
 
