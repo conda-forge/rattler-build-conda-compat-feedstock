@@ -1,5 +1,5 @@
 {% set name = "rattler-build-conda-compat" %}
-{% set version = "0.1.2" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/nichmor/rattler-build-conda-compat/releases/download/v{{ version }}/rattler_build_conda_compat-{{ version }}.tar.gz
-  sha256: 476b836fd8e003ad91fb8c1304a1789a07afd9478ba37c599689f2354b6d47b6
+  sha256: aa25553ec3b72ad7252b7bcdb1d6896fef2c8d821020aae03c99356ce774b7b6
 
 build:
   noarch: python
@@ -16,20 +16,23 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - pip
     - hatchling >=1.25.0
   run:
-    - python >=3.8
+    - python >=3.10
     - rattler-build
     - conda-build
-    - pytest
-
+    - typing-extensions>=4.12.2,<5
+    - tomli
+    - ruamel.yaml
 
 test:
   imports:
     - rattler_build_conda_compat.loader
     - rattler_build_conda_compat.render
+    - rattler_build_conda_compat.conditional_list
+    - rattler_build_conda_compat.recipe_sources
   requires:
     - pip
   commands:
@@ -47,3 +50,4 @@ extra:
   recipe-maintainers:
     - tdejager
     - nichmor
+    - baszalmstra
