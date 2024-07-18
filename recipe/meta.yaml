@@ -18,7 +18,7 @@ requirements:
   host:
     - python >=3.8
     - pip
-    - hatchling >= 1.25.0
+    - hatchling >=1.25.0
   run:
     - python >=3.8
     - rattler-build
