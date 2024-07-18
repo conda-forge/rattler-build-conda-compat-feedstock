@@ -147,7 +147,5 @@ Feedstock Maintainers
 =====================
 
 * [@nichmor](https://github.com/nichmor/)
-
-
-<!-- dummy commit to enable rerendering -->
+* [@tdejager](https://github.com/tdejager/)
 
