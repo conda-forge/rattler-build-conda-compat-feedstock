@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -20,7 +20,7 @@ requirements:
     - pip
     - hatchling >=1.24.0
   run:
-    - python >=3.10
+    - python >=3.8
     - rattler-build
     - conda-build
     - typing-extensions >=4.12.2,<5
@@ -36,6 +36,8 @@ test:
     - rattler_build_conda_compat.recipe_sources
   requires:
     - pip
+    # Test against the lowest supported python version
+    - python 3.8.*
     # test dependencies
     - pytest
     - syrupy
