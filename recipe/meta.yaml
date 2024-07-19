@@ -1,5 +1,5 @@
 {% set name = "rattler-build-conda-compat" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/nichmor/rattler-build-conda-compat/releases/download/v{{ version }}/rattler_build_conda_compat-{{ version }}.tar.gz
-  sha256: 7d025ebbbae75d722e88dc5fa7eb68ed782ab77582e0bb7233e054050e416003
+  sha256: d4da49ce71268c4f8b29f76c36e8317125ae291b84fcfb48c71b248f6ab9d236
 
 build:
   noarch: python
@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python >=3.8
     - pip
     - hatchling >=1.24.0
   run:
