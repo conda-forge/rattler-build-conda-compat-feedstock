@@ -36,7 +36,9 @@ test:
     - rattler_build_conda_compat.recipe_sources
   requires:
     - pip
+    # test dependencies
     - pytest
+    - syrupy
   commands:
     - pip check
     - pytest ./tests
