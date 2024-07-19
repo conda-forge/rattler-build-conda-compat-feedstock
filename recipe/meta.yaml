@@ -28,6 +28,7 @@ requirements:
     - ruamel.yaml
 
 test:
+  # Verify that the package can be succesfully imported
   imports:
     - rattler_build_conda_compat.loader
     - rattler_build_conda_compat.render
@@ -35,8 +36,14 @@ test:
     - rattler_build_conda_compat.recipe_sources
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest ./tests
+  source_files:
+    - tests/
+  downstreams:
+    - conda-smithy >=3.37.0
 
 about:
   home: https://github.com/nichmor/rattler-build-conda-compat
@@ -51,4 +58,3 @@ extra:
     - baszalmstra
     - tdejager
     - nichmor
-    - baszalmstra
