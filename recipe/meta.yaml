@@ -1,5 +1,5 @@
 {% set name = "rattler-build-conda-compat" %}
-{% set version = "0.2.5" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -26,6 +26,8 @@ requirements:
     - typing-extensions >=4.12.2,<5
     - tomli
     - ruamel.yaml
+    - jinja2>=3.0.2,<4
+    - types-PyYAML>=6.0.12.20240311,<6.0.13
 
 test:
   # Verify that the package can be succesfully imported
