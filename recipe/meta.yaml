@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/rattler-build-conda-compat/releases/download/v{{ version }}/rattler_build_conda_compat-{{ version }}.tar.gz
-  sha256: 6cdb11f4a6e34e36e059ac7052ae1e0d6a05fc0810a6ca3cd09a6f4b1876b1aa
+  sha256: dc63db40ffa2a45494829ff5168a7024f958318b11004ae38e71f753446e710a
 
 build:
   noarch: python
