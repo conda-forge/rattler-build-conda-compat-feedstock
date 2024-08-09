@@ -1,5 +1,5 @@
 {% set name = "rattler-build-conda-compat" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/rattler-build-conda-compat/releases/download/v{{ version }}/rattler_build_conda_compat-{{ version }}.tar.gz
-  sha256: dc63db40ffa2a45494829ff5168a7024f958318b11004ae38e71f753446e710a
+  sha256: 57965d9ea05cd968905479cedc768312a58bc6061e1a2ae40be23b29916e4d61
 
 build:
   noarch: python
@@ -27,7 +27,6 @@ requirements:
     - tomli
     - ruamel.yaml
     - jinja2 >=3.0.2,<4
-    - types-PyYAML >=6.0.12.20240311,<6.0.13
 
 test:
   # Verify that the package can be succesfully imported
