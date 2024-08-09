@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/prefix-dev/rattler-build-conda-compat/releases/download/v{{ version }}/rattler_build_conda_compat-{{ version }}.tar.gz
+  url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 57965d9ea05cd968905479cedc768312a58bc6061e1a2ae40be23b29916e4d61
 
 build:
