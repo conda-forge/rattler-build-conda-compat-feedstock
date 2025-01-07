@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}.*
     - pip
     - hatchling >=1.24.0
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - rattler-build
     - conda-build
     - typing-extensions >=4.12.2,<5
@@ -38,7 +38,7 @@ test:
   requires:
     - pip
     # Test against the lowest supported python version
-    - python 3.8.*
+    - python {{ python_min }}.*
     # test dependencies
     - pytest
     - syrupy
