@@ -51,7 +51,7 @@ test:
     - conda-smithy >=3.37.0
 
 about:
-  home: https://github.com/nichmor/rattler-build-conda-compat
+  home: https://github.com/prefix-dev/rattler-build-conda-compat
   summary: 'rattler-build module which offer compatibility with conda-smithy'
   description: |
     rattler-build module which offer compatibility with conda-smithy
@@ -61,5 +61,6 @@ about:
 extra:
   recipe-maintainers:
     - baszalmstra
+    - minrk
     - nichmor
     - tdejager
