@@ -3,14 +3,13 @@ About rattler-build-conda-compat-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rattler-build-conda-compat-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/nichmor/rattler-build-conda-compat
+Home: https://github.com/prefix-dev/rattler-build-conda-compat
 
 Package license: BSD-3-Clause
 
 Summary: rattler-build module which offer compatibility with conda-smithy
 
 rattler-build module which offer compatibility with conda-smithy
-
 
 Current build status
 ====================
@@ -147,6 +146,7 @@ Feedstock Maintainers
 =====================
 
 * [@baszalmstra](https://github.com/baszalmstra/)
+* [@minrk](https://github.com/minrk/)
 * [@nichmor](https://github.com/nichmor/)
 * [@tdejager](https://github.com/tdejager/)
 

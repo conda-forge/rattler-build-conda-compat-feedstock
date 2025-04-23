@@ -1,0 +1,68 @@
+schema_version: 1
+
+context:
+  name: rattler-build-conda-compat
+  version: 1.4.3
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 4d75c12634e8deb9896c9feaf114a94822b5680969e6ab62d5337199297ac8df
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling >=1.24.0
+  run:
+    - python >=${{ python_min }}
+    - rattler-build
+    - conda-build
+    - typing-extensions >=4.12.2,<5
+    - tomli
+    - ruamel.yaml
+    - jinja2 >=3.0.2,<4
+
+tests:
+  - python:
+      imports:
+        - rattler_build_conda_compat.loader
+        - rattler_build_conda_compat.render
+        - rattler_build_conda_compat.conditional_list
+        - rattler_build_conda_compat.recipe_sources
+  - files:
+      source:
+        - tests/
+    requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+        - pytest
+        - syrupy
+    script:
+      - pip check
+      - pytest ./tests
+  - downstream: conda-smithy >=3.37.0
+
+about:
+  summary: rattler-build module which offer compatibility with conda-smithy
+  description: |
+    rattler-build module which offer compatibility with conda-smithy
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  homepage: https://github.com/prefix-dev/rattler-build-conda-compat
+
+extra:
+  recipe-maintainers:
+    - baszalmstra
+    - minrk
+    - nichmor
+    - tdejager
