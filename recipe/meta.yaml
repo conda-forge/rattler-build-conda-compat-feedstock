@@ -11,7 +11,8 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  # Need to use SETUPTOOLS_SCM_PRETEND_VERSION as GitHub release tarballs don't contain a .git directory
+  script: env SETUPTOOLS_SCM_PRETEND_VERSION={{ version }} {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
