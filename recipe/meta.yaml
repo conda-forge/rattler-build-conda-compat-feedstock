@@ -19,6 +19,7 @@ requirements:
     - python {{ python_min }}.*
     - pip
     - hatchling >=1.24.0
+    - hatch-vcs
   run:
     - python >={{ python_min }}
     - rattler-build
