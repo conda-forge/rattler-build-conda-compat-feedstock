@@ -145,11 +145,9 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@Hofer-Julian](https://github.com/Hofer-Julian/)
 * [@baszalmstra](https://github.com/baszalmstra/)
 * [@minrk](https://github.com/minrk/)
 * [@nichmor](https://github.com/nichmor/)
 * [@tdejager](https://github.com/tdejager/)
-
-
-<!-- dummy commit to enable rerendering -->
 
