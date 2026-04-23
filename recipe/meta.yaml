@@ -51,7 +51,7 @@ test:
   source_files:
     - tests/
   downstreams:
-    - conda-smithy >=3.37.0
+    - conda-smithy >=3.61.1
 
 about:
   home: https://github.com/prefix-dev/rattler-build-conda-compat
