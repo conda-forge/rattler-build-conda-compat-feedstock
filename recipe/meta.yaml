@@ -1,5 +1,5 @@
 {% set name = "rattler-build-conda-compat" %}
-{% set version = "1.4.18" %}
+{% set version = "1.4.19" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2455d7368b736721bc87b6356b83b8c3aa30412c4bdbb9caabfc14eda1b9c92b
+  sha256: bc69a8523d32e932fd979ac45d5381859105857d68928eae8bf72bb33d49b7b3
 
 build:
   noarch: python
