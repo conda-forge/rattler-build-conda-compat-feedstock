@@ -43,31 +43,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rattler-build-conda-compat` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install rattler-build-conda-compat
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install rattler-build-conda-compat
 ```
 
-It is possible to list all of the versions of `rattler-build-conda-compat` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add rattler-build-conda-compat
+# for installing globally
+pixi global install rattler-build-conda-compat
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `rattler-build-conda-compat` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search rattler-build-conda-compat --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search rattler-build-conda-compat --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search rattler-build-conda-compat --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -79,6 +121,8 @@ mamba repoquery whoneeds rattler-build-conda-compat --channel conda-forge
 # List dependencies of `rattler-build-conda-compat`:
 mamba repoquery depends rattler-build-conda-compat --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
