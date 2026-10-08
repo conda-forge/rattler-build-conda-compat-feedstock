@@ -55,7 +55,11 @@ tests:
       run:
         - python ${{ python_min }}.*
         - pytest
-        - syrupy
+        # Upstream's snapshots are written with syrupy 4, and syrupy 6 serializes
+        # dataclasses differently, failing the tests/test_recipe_sources.py
+        # snapshots. Match the pin in upstream's pixi.toml and update it when
+        # upstream regenerates the snapshots with a newer syrupy.
+        - syrupy >=4.6.1,<5
     script:
       - pytest ./tests
 
