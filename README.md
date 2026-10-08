@@ -9,8 +9,9 @@ Package license: BSD-3-Clause
 
 Summary: rattler-build module which offer compatibility with conda-smithy
 
-rattler-build module which offer compatibility with conda-smithy
+Development: https://github.com/prefix-dev/rattler-build-conda-compat
 
+rattler-build module which offer compatibility with conda-smithy
 
 Current build status
 ====================
