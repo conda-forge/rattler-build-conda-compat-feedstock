@@ -1,0 +1,81 @@
+schema_version: 1
+
+context:
+  version: "1.4.19"
+
+package:
+  name: rattler-build-conda-compat
+  version: ${{ version }}
+
+source:
+  url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: bc69a8523d32e932fd979ac45d5381859105857d68928eae8bf72bb33d49b7b3
+
+build:
+  number: 1
+  noarch: python
+  script:
+    # Need to use SETUPTOOLS_SCM_PRETEND_VERSION as GitHub release tarballs don't contain a .git directory
+    env:
+      SETUPTOOLS_SCM_PRETEND_VERSION: ${{ version }}
+    content: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling >=1.24.0
+    - hatch-vcs
+  run:
+    - python >=${{ python_min }}
+    - rattler-build
+    - conda-build
+    - typing-extensions >=4.12.2,<5
+    - tomli
+    - ruamel.yaml >=0.18.6,<0.19
+    - jinja2 >=3.0.2,<4
+    - pygithub
+
+tests:
+  - python:
+      imports:
+        - rattler_build_conda_compat.loader
+        - rattler_build_conda_compat.render
+        - rattler_build_conda_compat.conditional_list
+        - rattler_build_conda_compat.recipe_sources
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - downstream: conda-smithy >=3.61.1
+  - files:
+      source:
+        - tests/
+    requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pytest
+        # Upstream's snapshots are written with syrupy 4, and syrupy 6 serializes
+        # dataclasses differently, failing the tests/test_recipe_sources.py
+        # snapshots. Match the pin in upstream's pixi.toml and update it when
+        # upstream regenerates the snapshots with a newer syrupy.
+        - syrupy >=4.6.1,<5
+    script:
+      - pytest ./tests
+
+about:
+  summary: rattler-build module which offer compatibility with conda-smithy
+  description: |
+    rattler-build module which offer compatibility with conda-smithy
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  homepage: https://github.com/prefix-dev/rattler-build-conda-compat
+  repository: https://github.com/prefix-dev/rattler-build-conda-compat
+
+extra:
+  recipe-maintainers:
+    - Hofer-Julian
+    - baszalmstra
+    - minrk
+    - nichmor
+    - tdejager
