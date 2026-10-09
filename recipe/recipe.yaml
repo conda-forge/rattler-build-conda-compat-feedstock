@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.4.19"
+  version: "1.4.22"
 
 package:
   name: rattler-build-conda-compat
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: bc69a8523d32e932fd979ac45d5381859105857d68928eae8bf72bb33d49b7b3
+  sha256: 54eeb1f222d6bf1690bd0cd498390dea356487f3d5de8f82829bfad888945665
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     # Need to use SETUPTOOLS_SCM_PRETEND_VERSION as GitHub release tarballs don't contain a .git directory
