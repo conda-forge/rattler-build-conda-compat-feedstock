@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.4.20"
+  version: "1.4.21"
 
 package:
   name: rattler-build-conda-compat
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 1c7975e1c4c14971ae9f04cb1be43d16fc1edfc7b8d6d8f8fb52933804c3afc8
+  sha256: ff3580e5035c6e6ab4f7c4a86dde182a40f0f701aaeb438fe86c2234c7bbdacf
 
 build:
   number: 0
@@ -55,11 +55,11 @@ tests:
       run:
         - python ${{ python_min }}.*
         - pytest
-        # Upstream's snapshots are written with syrupy 4, and syrupy 6 serializes
-        # dataclasses differently, failing the tests/test_recipe_sources.py
-        # snapshots. Match the pin in upstream's pixi.toml and update it when
-        # upstream regenerates the snapshots with a newer syrupy.
-        - syrupy >=4.6.1,<5
+        # Upstream's snapshots are specific to the syrupy major version that wrote
+        # them (syrupy 6 serializes dataclasses differently than syrupy 4 and 5),
+        # so match the pin in upstream's pixi.toml and update it when upstream
+        # regenerates the snapshots with a newer syrupy.
+        - syrupy >=6,<7
     script:
       - pytest ./tests
 
