@@ -12,7 +12,7 @@ source:
   sha256: 54eeb1f222d6bf1690bd0cd498390dea356487f3d5de8f82829bfad888945665
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     # Need to use SETUPTOOLS_SCM_PRETEND_VERSION as GitHub release tarballs don't contain a .git directory
@@ -30,10 +30,10 @@ requirements:
     - python >=${{ python_min }}
     - rattler-build
     - conda-build
-    - typing-extensions >=4.12.2,<5
+    - typing-extensions >=4.12.2
     - tomli
-    - ruamel.yaml >=0.18.6,<0.19
-    - jinja2 >=3.0.2,<4
+    - ruamel.yaml >=0.18.6
+    - jinja2 >=3.0.2
     - pygithub
 
 tests:
@@ -43,7 +43,9 @@ tests:
         - rattler_build_conda_compat.render
         - rattler_build_conda_compat.conditional_list
         - rattler_build_conda_compat.recipe_sources
-      pip_check: true
+      # FIXME: Set 'pip_check' to 'true' after v1.4.23 or later.
+      # see https://github.com/conda-forge/rattler-build-conda-compat/pull/144
+      pip_check: false
       python_version:
         - ${{ python_min }}.*
         - "*"
