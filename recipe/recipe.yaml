@@ -43,7 +43,9 @@ tests:
         - rattler_build_conda_compat.render
         - rattler_build_conda_compat.conditional_list
         - rattler_build_conda_compat.recipe_sources
-      pip_check: true
+      # FIXME: Set 'pip_check' to 'true' after v1.4.23 or later.
+      # see https://github.com/conda-forge/rattler-build-conda-compat/pull/144
+      pip_check: false
       python_version:
         - ${{ python_min }}.*
         - "*"
