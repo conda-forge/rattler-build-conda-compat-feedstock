@@ -195,6 +195,5 @@ Feedstock Maintainers
 * [@baszalmstra](https://github.com/baszalmstra/)
 * [@matthewfeickert](https://github.com/matthewfeickert/)
 * [@minrk](https://github.com/minrk/)
-* [@nichmor](https://github.com/nichmor/)
 * [@tdejager](https://github.com/tdejager/)
 
