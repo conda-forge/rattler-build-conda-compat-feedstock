@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "1.4.23"
+  version: "1.4.24"
 
 package:
   name: rattler-build-conda-compat
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://github.com/prefix-dev/rattler-build-conda-compat/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: df21ec6cd7ca6f3987e20ee4eb0b9b14555ea0c9a93d96776a3169834e19f1e1
+  sha256: e407da116b09e1734e77cb5832400b93ab7b3b3797a22df3236ed1404a767987
 
 build:
   number: 0
